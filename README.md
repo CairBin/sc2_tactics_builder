@@ -39,6 +39,33 @@ npm run dev
 npx vite build
 ```
 
+## Cloudflare Worker 自动部署
+
+项目已配置 Cloudflare Worker 自动构建和部署，通过 GitHub Actions 实现。
+
+### 配置步骤
+
+1. **安装 Wrangler CLI**（本地开发用）
+   ```bash
+   npm install -g wrangler
+   ```
+
+2. **配置 Cloudflare API Token**
+   - 在 GitHub 仓库中添加名为 `CLOUDFLARE_API_TOKEN` 的 secret
+   - 此 token 需要具有 Workers KV 编辑权限
+
+3. **部署命令**
+   ```bash
+   wrangler deploy
+   ```
+
+### 自动部署流程
+
+- 当推送到 `main` 或 `master` 分支时，GitHub Actions 会自动：
+  1. 安装依赖
+  2. 构建项目
+  3. 部署到 Cloudflare Workers
+
 ## 使用方法
 
 1. **填写战术信息**：在表单中填写战术名称、作者、描述等基本信息
