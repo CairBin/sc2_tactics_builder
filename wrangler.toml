@@ -1,8 +1,0 @@
-name = "sc2-tactics-builder"
-compatibility_date = "2023-01-01"
-
-main = "worker.js"
-build = "npx vite build"
-
-[site]
-bucket = "./dist"
